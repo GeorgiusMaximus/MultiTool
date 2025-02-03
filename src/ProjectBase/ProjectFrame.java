@@ -20,9 +20,9 @@ public class ProjectFrame extends JFrame implements ActionListener {
 
     JButton calculator;
     int calculator_counter = 1; //counts how many calculators the user has created in one session with in the MultiTool
-    int circle_calculator_counter = 1; //counts how many cirlce-calculators the user has created in one session with in the MultiTool
 
     JButton circle_calculator;
+    int circle_calculator_counter = 1; //counts how many cirlce-calculators the user has created in one session with in the MultiTool
 
 
     public ProjectFrame(){
