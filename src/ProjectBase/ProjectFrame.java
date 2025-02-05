@@ -43,6 +43,8 @@ public class ProjectFrame extends JFrame implements ActionListener {
         text_editor.addActionListener(this);
 
 
+
+
         west_panel = new JPanel();
         north_panel = new JPanel();
         east_panel = new JPanel();
@@ -55,6 +57,14 @@ public class ProjectFrame extends JFrame implements ActionListener {
         south_panel.setPreferredSize(new Dimension(25, 25));
         center_panel.setPreferredSize(new Dimension(25, 25));
 
+        Color bgColor = new Color(150, 150, 150);
+        west_panel.setBackground(bgColor);
+        north_panel.setBackground(bgColor);
+        east_panel.setBackground(bgColor);
+        south_panel.setBackground(bgColor);
+        center_panel.setBackground(bgColor);
+
+
         //All the features (Programs) are added to the Program Frame here
         center_panel.add(calculator);
         center_panel.add(circle_calculator);
@@ -66,7 +76,7 @@ public class ProjectFrame extends JFrame implements ActionListener {
         this.setSize(600, 400);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        //this.getContentPane().setBackground(new Color(150, 150, 150));
+        this.getContentPane().setBackground(new Color(150, 150, 150));
         //this.setBackground(new Color(150, 150, 150));
         this.setLayout(new BorderLayout());
 
