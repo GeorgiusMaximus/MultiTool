@@ -22,7 +22,7 @@ public class CircleCalculator {
          */
         JOptionPane.showMessageDialog(
                 null, "Scope: " + umfang + " "
-                        + einheit + "\nSurface Area: " + flaeche + " " + einheit + '\u00b2' + "\nDiameter: " + durchmesser + einheit
+                        + einheit + "\nSurface Area: " + flaeche + " " + einheit + '\u00b2' + "\nDiameter: " + durchmesser + " " + einheit
         );
     }
 
