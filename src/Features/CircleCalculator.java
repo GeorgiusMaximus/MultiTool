@@ -7,6 +7,7 @@ public class CircleCalculator {
     public CircleCalculator(){
         var eingabe = JOptionPane.showInputDialog("Type in the radius of the wanted circle: ");
         var radius = Double.parseDouble(eingabe);
+        var durchmesser = 2 * radius;
         eingabe = JOptionPane.showInputDialog("Type in the unit of measurement: ");
         var einheit = eingabe;
         var umfang = 2.0 * 3.11415926535 * radius;
@@ -21,7 +22,7 @@ public class CircleCalculator {
          */
         JOptionPane.showMessageDialog(
                 null, "Scope: " + umfang + " "
-                        + einheit + "\nSurface Area: " + flaeche + " " + einheit + '\u00b2'
+                        + einheit + "\nSurface Area: " + flaeche + " " + einheit + '\u00b2' + "\nDiameter: " + durchmesser + einheit
         );
     }
 
