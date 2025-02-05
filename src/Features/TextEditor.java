@@ -33,6 +33,7 @@ public class TextEditor extends JFrame implements ActionListener {
     JMenuItem text_editor_exitItem;
 
     public TextEditor(){
+
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setTitle("TextEditor");
         this.setSize(500, 500);
