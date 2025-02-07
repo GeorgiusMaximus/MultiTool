@@ -2,6 +2,7 @@ package ProjectBase;
 
 import Features.Calulator;
 import Features.CircleCalculator;
+import Features.SnakeGame.SnakeGame;
 import Features.TextEditor;
 
 import javax.swing.*;
@@ -28,6 +29,9 @@ public class ProjectFrame extends JFrame implements ActionListener {
     JButton text_editor;
     int text_editor_counter = 1; //counts how many Text-Editors the user has created in one session with in the MultiTool
 
+    JButton snake_game;
+    int snake_game_counter = 1; //counts how many Snake-Games the user has created in one session with in the MultiTool
+
     Color backgroundColor;
     Color buttonColor;
 
@@ -37,7 +41,9 @@ public class ProjectFrame extends JFrame implements ActionListener {
         project_title = "Multi Tool";
 
         backgroundColor = new Color(150, 150, 150);
-        buttonColor = new Color(100, 160, 140);
+        buttonColor = new Color(72, 157, 129);
+
+        //The buttons to create Features START
 
         calculator = new JButton("Calculator");
         calculator.addActionListener(this);
@@ -53,6 +59,13 @@ public class ProjectFrame extends JFrame implements ActionListener {
         text_editor.addActionListener(this);
         text_editor.setBackground(buttonColor);
         text_editor.setFocusPainted(false);
+
+        snake_game = new JButton("Snake");
+        snake_game.addActionListener(this);
+        snake_game.setBackground(buttonColor);
+        snake_game.setFocusPainted(false);
+
+        // The buttons to create new Features END
 
         west_panel = new JPanel();
         north_panel = new JPanel();
@@ -77,6 +90,7 @@ public class ProjectFrame extends JFrame implements ActionListener {
         center_panel.add(calculator);
         center_panel.add(circle_calculator);
         center_panel.add(text_editor);
+        center_panel.add(snake_game);
 
 
         this.setTitle(project_title);
@@ -114,6 +128,11 @@ public class ProjectFrame extends JFrame implements ActionListener {
             new TextEditor();
             System.out.println("Created new Text-Editor Nr: " + text_editor_counter + "\n");
             text_editor_counter++;
+        }
+        if (e.getSource() == snake_game){
+            new SnakeGame();
+            System.out.println("Created new Snake-Game Nr: " + snake_game_counter + "\n");
+            snake_game_counter++;
         }
     }
 }
