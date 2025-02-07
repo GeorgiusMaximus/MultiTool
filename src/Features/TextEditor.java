@@ -49,7 +49,7 @@ public class TextEditor extends JFrame implements ActionListener {
 
         text_editor_scrollPane = new JScrollPane(text_editor_textArea);
         text_editor_scrollPane.setPreferredSize(new Dimension(450, 450));
-        text_editor_scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        text_editor_scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         text_editor_fontInfoLabel = new JLabel("Font-Size: ");
 
