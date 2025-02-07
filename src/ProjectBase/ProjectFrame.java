@@ -130,6 +130,7 @@ public class ProjectFrame extends JFrame implements ActionListener {
             text_editor_counter++;
         }
         if (e.getSource() == snake_game){
+            JOptionPane.showMessageDialog(null, "Use arrow-keys to controll the snake :D");
             new SnakeGame();
             System.out.println("Created new Snake-Game Nr: " + snake_game_counter + "\n");
             snake_game_counter++;
