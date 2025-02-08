@@ -13,6 +13,13 @@ import java.awt.event.ActionListener;
 public class ProjectFrame extends JFrame implements ActionListener {
 
     String project_title;
+    boolean resizable;
+
+    JMenuBar menuBar;
+    JMenu file_menu;
+    JMenu info_menu;
+    JMenuItem exit_item;
+    JMenuItem info_item;
 
     JPanel west_panel;
     JPanel north_panel;
@@ -39,6 +46,8 @@ public class ProjectFrame extends JFrame implements ActionListener {
     public ProjectFrame(){
 
         project_title = "Multi Tool";
+
+        resizable = true;
 
         backgroundColor = new Color(150, 150, 150);
         buttonColor = new Color(72, 157, 129);
@@ -92,11 +101,29 @@ public class ProjectFrame extends JFrame implements ActionListener {
         center_panel.add(text_editor);
         center_panel.add(snake_game);
 
+        menuBar = new JMenuBar();
+
+        file_menu = new JMenu("File");
+        info_menu = new JMenu("Info");
+
+        exit_item = new JMenuItem("Exit");
+        exit_item.addActionListener(this);
+
+        info_item = new JMenuItem("What this should do");
+        info_item.addActionListener(this);
+
+        file_menu.add(exit_item);
+        info_menu.add(info_item);
+        menuBar.add(file_menu);
+        menuBar.add(info_menu);
+
+
 
         this.setTitle(project_title);
+        this.setJMenuBar(menuBar);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(600, 400);
-        this.setResizable(false);
+        this.setResizable(resizable);
         this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(new Color(150, 150, 150));
         this.setLayout(new BorderLayout());
@@ -134,6 +161,17 @@ public class ProjectFrame extends JFrame implements ActionListener {
             new SnakeGame();
             System.out.println("Created new Snake-Game Nr: " + snake_game_counter + "\n");
             snake_game_counter++;
+        }
+
+        if (e.getSource() == exit_item){
+            System.exit(0);
+        }
+
+        if (e.getSource() == info_item){
+            JOptionPane.showMessageDialog(null, "This is suppost to be\n" +
+                    "a Multi-Tool containing several usefull programs \n" +
+                    "for every day use.");
+
         }
     }
 }
