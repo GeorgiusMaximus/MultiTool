@@ -25,6 +25,7 @@ public class Calulator implements ActionListener, KeyListener {
         calculator_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         calculator_frame.setSize(420, 550);
         calculator_frame.setLayout(null);
+        calculator_frame.setResizable(false);
         calculator_frame.setLocationRelativeTo(null);
 
 
