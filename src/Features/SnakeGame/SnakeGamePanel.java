@@ -38,6 +38,7 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
     }
 
     public void startGame(){
+
         newApple();
         running = true;
         timer = new Timer(DELAY, this);
@@ -159,6 +160,24 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
         g.drawString("Game Over :(", (SNAKE_SCREEN_WIDTH- metrics2.stringWidth("Game Over :("))/2, SNAKE_SCREEN_HEIGHT/2);
     }
 
+    public void restartGame() {
+        // Setzen Sie die Startwerte für das Spiel zurück
+        snake_body_parts = 6;
+        applesEaten = 0;
+        direction = 'R';
+        running = true;
+        // Setzen Sie die Positionen des Schlangenkörpers zurück
+        for (int i = 0; i < snake_body_parts; i++) {
+            x[i] = 0;
+            y[i] = 0;
+        }
+        // Erzeugen Sie einen neuen Apfel
+        newApple();
+        // Starten Sie den Timer neu
+        timer.restart();
+    }
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (running) {
@@ -194,6 +213,13 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
                         direction = 'D';
                     }
                     break;
+
+                case KeyEvent.VK_R:
+                    if (!running) {
+                        restartGame();
+                    }
+
+
             }
 
         }
