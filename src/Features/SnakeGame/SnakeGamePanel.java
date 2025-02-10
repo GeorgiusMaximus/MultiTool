@@ -214,6 +214,26 @@ public class SnakeGamePanel extends JPanel implements ActionListener {
                     }
                     break;
 
+                case KeyEvent.VK_A:
+                    if (direction != 'R') {
+                        direction = 'L';
+                    }
+                    break;
+                case KeyEvent.VK_D:
+                    if (direction != 'L') {
+                        direction = 'R';
+                    }
+                    break;
+                case KeyEvent.VK_W:
+                    if (direction != 'D') {
+                        direction = 'U';
+                    }
+                case KeyEvent.VK_S:
+                    if (direction != 'U') {
+                        direction = 'D';
+                    }
+                    break;
+
                 case KeyEvent.VK_R:
                     if (!running) {
                         restartGame();
