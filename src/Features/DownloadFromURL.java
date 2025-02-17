@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.nio.file.Paths;
-import java.util.Scanner;
+
 
 public class DownloadFromURL {
 
@@ -14,9 +14,9 @@ public class DownloadFromURL {
 
     public DownloadFromURL(){
         try {
-            String address = JOptionPane.showInputDialog("Geben Sie die URL der Datei ein:");
+            String address = JOptionPane.showInputDialog("Put in the URL of the wanted File: ");
             if (address == null || address.trim().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Keine gültige URL eingegeben.");
+                JOptionPane.showMessageDialog(null, "No fitting URL");
                 return;
             }
 
@@ -38,9 +38,9 @@ public class DownloadFromURL {
 
             is.close();
             os.close();
-            JOptionPane.showMessageDialog(null, "Download abgeschlossen! Datei gespeichert unter:\n" + desktopPath);
+            JOptionPane.showMessageDialog(null, "Download completed. File saved at:\n" + desktopPath);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Fehler beim Herunterladen: " + e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error during download: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 
