@@ -2,6 +2,7 @@ package ProjectBase;
 
 import Features.Calulator;
 import Features.CircleCalculator;
+import Features.DownloadFromURL;
 import Features.SnakeGame.SnakeGame;
 import Features.TextEditor;
 
@@ -39,6 +40,9 @@ public class ProjectFrame extends JFrame implements ActionListener {
     JButton snake_game;
     int snake_game_counter = 1; //counts how many Snake-Games the user has created in one session with in the MultiTool
 
+    JButton download_from_url;
+    int download_from_url_counter = 1; //counts how many DownloadFromURL-Features the user has created in one session with in the MultiTool
+
     Color backgroundColor;
     Color buttonColor;
 
@@ -74,6 +78,11 @@ public class ProjectFrame extends JFrame implements ActionListener {
         snake_game.setBackground(buttonColor);
         snake_game.setFocusPainted(false);
 
+        download_from_url = new JButton("Download From URL");
+        download_from_url.addActionListener(this);
+        download_from_url.setBackground(buttonColor);
+        download_from_url.setFocusPainted(false);
+
         // The buttons to create new Features END
 
         west_panel = new JPanel();
@@ -100,6 +109,7 @@ public class ProjectFrame extends JFrame implements ActionListener {
         center_panel.add(circle_calculator);
         center_panel.add(text_editor);
         center_panel.add(snake_game);
+        center_panel.add(download_from_url);
 
         menuBar = new JMenuBar();
 
@@ -162,6 +172,11 @@ public class ProjectFrame extends JFrame implements ActionListener {
             new SnakeGame();
             System.out.println("Created new Snake-Game Nr: " + snake_game_counter + "\n");
             snake_game_counter++;
+        }
+        if (e.getSource() == download_from_url){
+            new DownloadFromURL();
+            System.out.println("Created new DownloadFromURL Nr: " + download_from_url_counter + "\n");
+            download_from_url_counter++;
         }
 
         if (e.getSource() == exit_item){

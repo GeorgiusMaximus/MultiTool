@@ -63,6 +63,7 @@ public class Calulator implements ActionListener, KeyListener {
         for (int i = 0; i < 10; i++){
             number_buttons[i] = new JButton(String.valueOf(i));
             number_buttons[i].addActionListener(this);
+            number_buttons[i].addKeyListener(this); //TEST
             number_buttons[i].setFont(calculator_font);
             number_buttons[i].setFocusable(false);
         }
